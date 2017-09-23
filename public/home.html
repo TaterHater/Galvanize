@@ -45,10 +45,6 @@
             background-color: #2222aa;
         }
 
-        .blue a {
-            color: white;
-        }
-
         .white {
             background-color: white;
         }
@@ -61,8 +57,16 @@
             line-height: 33.3vh;
         }
 
+        .blue a {
+            color: white;
+        }
+
         .white a {
             color: #2222aa;
+        }
+
+        .grey a {
+            color: black;
         }
 
         .bp {
@@ -79,11 +83,12 @@
         } */
     </style>
     <script>
-        // $(document).ready(function () {
-        //     $("a").click(function () {
-        //         console.log($(this.children[0]).text());
-        //     });
-        // });
+        $('#risk-input').submit(function () {
+            $('#risk-entered').text() = $('#risk').val(); //need to add uid eventually
+            console.log("risk-input submitted with " + $('#risk').val());
+            $("#collapse1").collapse('hide');
+            return false;
+        });
     </script>
 </head>
 
@@ -92,9 +97,16 @@
         <div class="panel">
             <div class="panel-heading bp third blue">
                 <a data-toggle="collapse" href="#collapse1">New Risk</a>
+                <a id="risk-entered"></a>
             </div>
             <div id="collapse1" class="panel-collapse collapse">
-                <div class="panel-body third bp">Panel Body</div>
+                <div class="panel bp third grey">
+                    <form id="risk-input">
+                        <a>What's the Risk?</a>
+                        <input type="text" id="risk" value="Type the risk here"><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="panel">
