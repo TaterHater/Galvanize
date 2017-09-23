@@ -17,29 +17,33 @@
         .p {
             background-color: yellow;
         }
+
         .third {
             height: 33.3vh;
             text-align: center;
         }
+
         .blue {
-            background-color:#3333cc;
-            color:white;
+            background-color: #3333cc;
+            color: white;
         }
+
         .white {
-            background-color:white;
-            color:#3333cc;
+            background-color: white;
+            color: #3333cc;
         }
     </style>
     <script>
-        $('#1.1').click(function () {
-            console.log('New Risk');
-            // console.log($(this.attributes.id).val());
-        });
-        $('#1.2').click(function () {
-            console.log('My Risks');
-        });
-        $('#1.3').click(function () {
-            console.log('Dashboard');
+        $(document).ready(function () {
+            $('#1.1').click(function () {
+                console.log('New Risk');
+            });
+            $('#1.2').click(function () {
+                console.log('My Risks');
+            });
+            $('#1.3').click(function () {
+                console.log('Dashboard');
+            });
         });
     </script>
 </head>
@@ -47,19 +51,19 @@
 <body>
     <div class="main container">
         <div class="jumbotron blue third">
-            <button id="1.1" class="btn btn-block">
+            <a id="1.1" class="btn btn-block">
                 <h1>New Risk</h1>
-            </button>
+            </a>
         </div>
         <div class="jumbotron white third">
-            <button id="1.2" class="btn btn-block">
+            <a id="1.2" class="btn btn-block">
                 <h1>My Risks</h1>
-            </button>
+            </a>
         </div>
         <div class="jumbotron blue third">
-            <button id="1.3" class="btn btn-block">
+            <a id="1.3" class="btn btn-block">
                 <h1>Dashboard</h1>
-            </button>
+            </a>
         </div>
 
     </div>
