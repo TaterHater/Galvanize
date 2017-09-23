@@ -1,5 +1,6 @@
 // JavaScript source code
 var http = require('http');
+var path = require('path');
 var express = require('express');
 var mysql = require('mysql');
 var messages = require('../routes/messages');
@@ -18,5 +19,5 @@ app.post('/', function (req, res) {
 });
 
 app.get('/home', function (req, res) {
-    res.sendFile(__dirname + "/../public/html/home.html");
+    res.sendFile(path.resolve(__dirname + "/../public/html/home.html"));
 });
