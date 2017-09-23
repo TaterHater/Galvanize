@@ -99,27 +99,9 @@
         });
 
         //to get all sites, call getInfo('/sites');
-        function getInfo(path, callback) {
-
-            return http.get({
-                host: 'moosen.im',
-                path: path
-            }, function (response) {
-                // Continuously update stream with data
-                var body = '';
-                response.on('data', function (d) {
-                    body += d;
-                });
-                response.on('end', function () {
-
-                    // Data reception is done, do whatever with it!
-                    var parsed = JSON.parse(body);
-                    console.log(body);
-
-                });
-            });
-
-        }
+        $.get('http://www.moosen.im/messages/risks', function (data) {
+            alert("Data Loaded: " + data);
+        });
     </script>
 </head>
 
