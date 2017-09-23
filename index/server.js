@@ -1,6 +1,7 @@
 // JavaScript source code
 var http = require('http');
 var path = require('path');
+var fs = require('fs');
 var express = require('express');
 var mysql = require('mysql');
 var messages = require('../routes/messages');
@@ -29,6 +30,7 @@ var connect = {
     password: "raspberry",
     database: "mooserisk"
 };
+<<<<<<< HEAD
 var con = sql.createConnection(connect);
 
 function addUser(name, email, isAdmin) {
@@ -43,3 +45,6 @@ function loadRisks() {
 
 
 };
+=======
+var con = mysql.createConnection(connect); 
+>>>>>>> origin/master
