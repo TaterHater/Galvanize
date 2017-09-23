@@ -1,6 +1,7 @@
 // JavaScript source code
 var http = require('http');
 var path = require('path');
+var request = require('request');
 var fs = require('fs');
 var express = require('express');
 var mysql = require('mysql');
@@ -46,31 +47,35 @@ function httpInterface(host, path, method,data) {
         port: '80',
         method: method
     };
-    callback = function (response) {
-        var str = ''
-        response.on('data', function (chunk) {
-            str += chunk;
-        });
+    try {
+        callback = function (response) {
+            var str = ''
+            response.on('data', function (chunk) {
+                str += chunk;
+            });
 
-        response.on('end', function () {
-            console.log(str);
-        });
+            response.on('end', function () {
+                console.log(str);
+            });
+        }
+        var req = http.request(options, callback);
+        //This is the data we are posting, it needs to be a string or a buffer
+        if(method === "post")
+        req.write(data);
+        req.end();
+    } catch (e) {
+        console.log(e);
     }
-    var req = http.request(options, callback);
-    //This is the data we are posting, it needs to be a string or a buffer
-    req.write(data);
-    req.end();
-
 }
 
-httpInterface('http://www.moosen.im','/messages/sites',request,0);
+//httpInterface('http://www.moosen.im','/messages/sites','request',0);
 //http get test
-require('http').get('http://www.moosen.im/messages/risks', (res) => {
-    res.setEncoding('utf8');
-    res.on('data', function (body) {
-        console.log(body);
-    });
-});
+//require('http').get('http://www.moosen.im/messages/risks', (res) => {
+//    res.setEncoding('utf8');
+//    res.on('data', function (body) {
+//        console.log(body);
+//    });
+//});
 
 function addForm(file) {
     //parse file, then add to db
