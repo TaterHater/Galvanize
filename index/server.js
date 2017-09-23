@@ -5,14 +5,8 @@ var fs = require('fs');
 var express = require('express');
 var mysql = require('mysql');
 var messages = require('../routes/messages');
-require("jsdom").env("", function (err, window) {
-    if (err) {
-        console.error(err);
-        return;
-    }
+var $ = require("jQuery");
 
-    var $ = require("jquery")(window);
-});
 var app = express();
 var fs = require("fs");
 var httpServer = http.createServer(app).listen(80, function () {
@@ -48,8 +42,10 @@ function addUser(name, email, isAdmin) {
 function addForm(file) {
     //parse file, then add to db
     var result;
-   result =  $.getJSON(file);
-   console.log(result);
+    $.getJSON(file, function (data) {
+        console.log(data);
+    });
+   
     var form = {
         id: file.id,
         site: file.site,
