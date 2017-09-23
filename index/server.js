@@ -1,6 +1,7 @@
 // JavaScript source code
 var http = require('http');
 var path = require('path');
+var fs = require('fs');
 var express = require('express');
 var mysql = require('mysql');
 var messages = require('../routes/messages');
@@ -29,4 +30,4 @@ var connect = {
     password: "raspberry",
     database: "mooserisk"
 };
-var con = sql.createConnection(connect); 
+var con = mysql.createConnection(connect); 
