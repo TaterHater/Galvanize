@@ -23,6 +23,11 @@
             text-align: center;
         }
 
+        .two-third {
+            height: 66.7vh;
+            text-align: center;
+        }
+
         .blue {
             background-color: #3333cc;
         }
@@ -38,15 +43,6 @@
         .white a h1 {
             color: #3333cc;
         }
-
-        .jumbotron {
-            display: table;
-        }
-
-        .jumbotron a h1 {
-            display: table-cell;
-            vertical-align: middle;
-        }
     </style>
     <script>
         $(document).ready(function () {
@@ -59,9 +55,13 @@
 
 <body>
     <div class="jumbotron blue third">
-        <a id="1.1" class="btn btn-block">
+        <a id="1.1" href="#1.1c" data-toggle="collapse" class="btn btn-block">
             <h1>New Risk</h1>
         </a>
+        <div id="1.1c" class="collapse jumbotron blue two-third">
+            <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h1>
+        </div>
     </div>
     <div class="jumbotron white third">
         <a id="1.2" class="btn btn-block">
