@@ -14,7 +14,6 @@ router.get('/users/:id?', function (req, res, next) {
     }
 });
 router.get('/risks', function (req, res, next) {
-    if (req.params.id) {
         Mess.GetRisk( function (err, rows) {
             if (err) {
                 res.json(err);
@@ -22,10 +21,8 @@ router.get('/risks', function (req, res, next) {
                 res.json(rows);
             }
         });
-    }
 });
 router.get('/sites', function (req, res, next) {
-    if (req.params.id) {
         Mess.GetRisk(function (err, rows) {
             if (err) {
                 res.json(err);
@@ -33,10 +30,9 @@ router.get('/sites', function (req, res, next) {
                 res.json(rows);
             }
         });
-    }
 });
 router.get('/getform/:site?', function (req, res, next) {
-    if (req.params.id) {
+    if (req.params.site) {
         Mess.GetformBySite(req.params.site, function (err, rows) {
             if (err) {
                 res.json(err);
