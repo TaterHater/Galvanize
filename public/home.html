@@ -31,20 +31,21 @@
         }
     </style>
     <script>
-        $('#1.1').click(function () {
-            console.log('New Risk');
+        $('#main').on('click', 'a', function () {
+            console.log('One of them clicked');
+            console.log($(this.attributes.id).val());
         });
-        $('#1.2').click(function () {
-            console.log('My Risks');
-        });
-        $('#1.3').click(function () {
-            console.log('Dashboard');
-        });
+        // $('#1.2').on('click', 'a', function () {
+        //     console.log('My Risks');
+        // });
+        // $('#1.3').on('click', 'a', function () {
+        //     console.log('Dashboard');
+        // });
     </script>
 </head>
 
 <body>
-    <div class="container">
+    <div class="main container">
         <div class="jumbotron blue third">
             <a id="1.1" role="button" class="btn btn-block">
                 <h1>New Risk</h1>
