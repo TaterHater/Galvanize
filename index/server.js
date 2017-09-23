@@ -10,8 +10,6 @@ var httpServer = http.createServer(app).listen(80, function () {
     console.log('http redirect server up and running at port 80');
 });
 
-<<<<<<< HEAD
-=======
 app.use('/messages', messages);
 
 app.post('/', function (req, res) {
@@ -21,4 +19,3 @@ app.post('/', function (req, res) {
 app.get('/', function (req, res) {
     res.send('GET request to the homepage')
 });
->>>>>>> origin/master
