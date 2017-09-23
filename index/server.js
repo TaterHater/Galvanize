@@ -68,7 +68,7 @@ function httpInterface(host, path, method,data) {
     }
 }
 
-httpInterface('http://www.moosen.im','/messages/sites','request',0);
+//httpInterface('http://www.moosen.im','/messages/sites','request',0);
 //http get test
 //require('http').get('http://www.moosen.im/messages/risks', (res) => {
 //    res.setEncoding('utf8');
