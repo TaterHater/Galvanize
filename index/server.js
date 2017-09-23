@@ -55,7 +55,7 @@ function getInfo(path,callback) {
         response.on('end', function () {
 
             // Data reception is done, do whatever with it!
-           // var parsed = JSON.parse(body);
+            var parsed = JSON.parse(body);
             console.log(body);
                 
         });
