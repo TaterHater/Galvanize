@@ -5,7 +5,14 @@ var fs = require('fs');
 var express = require('express');
 var mysql = require('mysql');
 var messages = require('../routes/messages');
+require("jsdom").env("", function (err, window) {
+    if (err) {
+        console.error(err);
+        return;
+    }
 
+    var $ = require("jquery")(window);
+});
 var app = express();
 var fs = require("fs");
 var httpServer = http.createServer(app).listen(80, function () {
@@ -36,9 +43,20 @@ var con = mysql.createConnection(connect);
 function addUser(name, email, isAdmin) {
     con.query("insert into users (name,email,is_admin) values (?,?,0,?) ", [name, email, isAdmin]);
 }
+
+
 function addForm(file) {
     //parse file, then add to db
+    var result;
+   result =  $.getJSON(file);
+   console.log(result);
+    var form = {
+        id: file.id,
+        site: file.site,
+        uid: file.uid,
+};
 }
+addForm('http://www.moosen.im/messages/risks');
 function loadRisks() {
 
   //  var content;
@@ -50,8 +68,9 @@ function loadRisks() {
     // add location to user, and indiviual sites are the only thing we need to update. 
     //add image uploads to forms
     //randomize question order to keep users on their toes. 
+    // have dashboard to change user info, and view stats
 };
-loadRisks();
+
 
 
 
