@@ -1,0 +1,39 @@
+form
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| id          | int(11)      | NO   | PRI | NULL    | auto_increment |
+| site        | varchar(255) | YES  |     | NULL    |                |
+| uid         | int(11)      | YES  |     | NULL    |                |
+| rating      | int(11)      | YES  |     | NULL    |                |
+| job_name    | varchar(255) | YES  |     | NULL    |                |
+| description | text         | YES  |     | NULL    |                |
+| risk        | int(11)      | YES  |     | NULL    |                |
+| timestamp   | varchar(255) | YES  |     | NULL    |                |
+| admin_notes | text         | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+users
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name     | varchar(100) | YES  |     | NULL    |                |
+| email    | varchar(100) | YES  |     | NULL    |                |
+| score    | int(11)      | YES  |     | NULL    |                |
+| is_admin | int(11)      | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+risks
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name     | varchar(255) | YES  |     | NULL    |                |
+| severity | int(11)      | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+sites
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(255) | YES  |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
