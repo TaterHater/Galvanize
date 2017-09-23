@@ -71,7 +71,7 @@ function getRisks(callback) {
 
     return http.get({
         host: 'moosen.im',
-        path: '/risks'
+        path: '/messages/risks'
     }, function (response) {
         // Continuously update stream with data
         var body = '';
@@ -83,7 +83,7 @@ function getRisks(callback) {
             // Data reception is done, do whatever with it!
            // var parsed = JSON.parse(body);
             console.log(body);
-            
+                
         });
     });
 
