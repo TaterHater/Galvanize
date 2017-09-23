@@ -1,6 +1,7 @@
 // JavaScript source code
 var http = require('http');
 var path = require('path');
+var request = require('request');
 var fs = require('fs');
 var express = require('express');
 var mysql = require('mysql');
@@ -63,7 +64,7 @@ function httpInterface(host, path, method,data) {
 
 }
 
-httpInterface('http://www.moosen.im','/messages/sites',request,0);
+httpInterface('http://www.moosen.im','/messages/sites',get,0);
 //http get test
 require('http').get('http://www.moosen.im/messages/risks', (res) => {
     res.setEncoding('utf8');
