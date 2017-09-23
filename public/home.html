@@ -7,7 +7,7 @@
     <title></title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
 
@@ -23,18 +23,18 @@
             text-align: center;
         }
 
-            .third a {
-                font-size: 5em;
-            }
+        .third a {
+            font-size: 5em;
+        }
 
         .sixth {
             height: 16.7vh;
             text-align: center;
         }
 
-            .sixth a {
-                font-size: 2.5em;
-            }
+        .sixth a {
+            font-size: 2.5em;
+        }
 
         .two-third {
             height: 66.7vh;
@@ -57,6 +57,14 @@
             line-height: 33.3vh;
         }
 
+        .third-text {
+            line-height: 33.3vh;
+        }
+
+        .sixth-text {
+            line-height: 16.7vh;
+        }
+
         .blue a {
             color: white;
         }
@@ -73,26 +81,16 @@
             background-image: none;
         }
 
-<<<<<<< HEAD
         .bp a {
             text-decoration: none;
         }
-=======
-            .bp a {
-                text-decoration: none;
-            }
-        /* .panel {
-            color: #333;
-            background-color: #f5f5f5;
-            border-color: #ddd;
-        } */
->>>>>>> 094c3e1b9c1d0918df9a3c8918c5a604f011b7e8
     </style>
     <script>
         $(document).ready(function () {
             console.log('here!');
             $('#risk-input').submit(function () {
                 event.preventDefault();
+                $('#new-risk').addClass("sixth-text");
                 $('#risk-entered').html($('#risk').val());
                 console.log("risk-input submitted with " + $('#risk').val());
                 $("#collapse1").collapse('hide');
@@ -129,14 +127,14 @@
     <div class="panel-group">
         <div class="panel">
             <div class="panel-heading bp third blue">
-                <a data-toggle="collapse" href="#collapse1">New Risk</a><br>
-                <a id="risk-entered">Risk</a>
+                <a class="third-text" id="new-risk" data-toggle="collapse" href="#collapse1">New Risk</a><br>
+                <a class="sixth-text" id="risk-entered"></a>
             </div>
             <div id="collapse1" class="panel-collapse collapse">
                 <div class="panel bp third grey">
                     <form id="risk-input">
-                        <a>What's the Risk?</a>
-                        <input type="text" id="risk" placeholder="Type the risk here"><br>
+                        <a class="sixth-text">What's the Risk?</a><br>
+                        <input type="text" id="risk" placeholder="Type the risk here">
                         <input type="submit" value="Submit">
                     </form>
                 </div>
@@ -161,25 +159,6 @@
             </div>
         </div>
     </div>
-    <!-- <div class="jumbotron blue third">
-        <a id="1.1" href="#1.1c" data-toggle="collapse" class="btn btn-block">
-            <h1>New Risk</h1>
-        </a>
-        <div id="1.1c" class="collapse">
-            <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h1>
-        </div>
-    </div>
-    <div class="jumbotron white third">
-        <a id="1.2" class="btn btn-block">
-            <h1>My Risks</h1>
-        </a>
-    </div>
-    <div class="jumbotron blue third">
-        <a id="1.3" class="btn btn-block">
-            <h1>Dashboard</h1>
-        </a>
-    </div> -->
 </body>
 
 </html>
