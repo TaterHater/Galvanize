@@ -21,3 +21,12 @@ app.post('/', function (req, res) {
 app.get('/home', function (req, res) {
     res.sendFile(path.resolve(__dirname + "/../public/html/home.html"));
 });
+
+
+var connect = {
+    host: "localhost",
+    user: "root",
+    password: "raspberry",
+    database: "mooserisk"
+};
+var con = sql.createConnection(connect); 
