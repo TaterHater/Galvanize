@@ -87,8 +87,8 @@
             console.log('here!');
             $('#risk-input').submit(function () {
                 event.preventDefault();
-                console.log('here');
-                $('#risk-entered').text() = $('#risk').val();
+                console.log($('#risk-entered').text());
+                console.log($('#risk').val());
                 console.log("risk-input submitted with " + $('#risk').val());
                 $("#collapse1").collapse('hide');
                 return false;
@@ -102,7 +102,7 @@
         <div class="panel">
             <div class="panel-heading bp third blue">
                 <a data-toggle="collapse" href="#collapse1">New Risk</a>
-                <a id="risk-entered"></a>
+                <a id="risk-entered">Risk</a>
             </div>
             <div id="collapse1" class="panel-collapse collapse">
                 <div class="panel bp third grey">
