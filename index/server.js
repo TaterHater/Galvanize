@@ -31,7 +31,7 @@ var connect = {
     password: "raspberry",
     database: "mooserisk"
 };
-var con = mysql.createConnection(connect); 
+var con = mysql.createConnection(connect);
 
 //adds user to database
 function addUser(name, email, isAdmin) {
@@ -60,29 +60,29 @@ function addForm(file) {
     try {
         getJSONP('http://www.moosen.im/messages/risks', function (data) {
             var frm = JSON.parse(data);
+            console.log(frm);
         });
-        
-        
+
     }
     catch (e) {
         console.log(e);
     }
-    console.log(frm);
-   
+
+
     var form = {
         id: file.id,
         site: file.site,
         uid: file.uid,
-};
+    };
 }
 addForm('http://www.moosen.im/messages/risks');
 function loadRisks() {
 
-  //  var content;
-   // $.getJSON('http://www.moosen.im/messages/risks', function (data) {
-       // content = data;
-   // });
-   // console.log(content);
+    //  var content;
+    // $.getJSON('http://www.moosen.im/messages/risks', function (data) {
+    // content = data;
+    // });
+    // console.log(content);
     //site cna have mine, processing plant, offices.
     // add location to user, and indiviual sites are the only thing we need to update. 
     //add image uploads to forms
