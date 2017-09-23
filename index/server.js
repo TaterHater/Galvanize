@@ -62,8 +62,7 @@ function getInfo(path,callback) {
     });
 
 }
-var s = getInfo('/messages/risks');
-console.log(s);
+
 
 function addForm(file) {
     //parse file, then add to db
