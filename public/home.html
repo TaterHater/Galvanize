@@ -31,16 +31,16 @@
         }
     </style>
     <script>
-        $('#main').on('click', 'button', function () {
-            console.log('One of them clicked');
-            console.log($(this.attributes.id).val());
+        $('#1.1').click(function () {
+            console.log('New Risk');
+            // console.log($(this.attributes.id).val());
         });
-        // $('#1.2').on('click', 'a', function () {
-        //     console.log('My Risks');
-        // });
-        // $('#1.3').on('click', 'a', function () {
-        //     console.log('Dashboard');
-        // });
+        $('#1.2').click(function () {
+            console.log('My Risks');
+        });
+        $('#1.3').click(function () {
+            console.log('Dashboard');
+        });
     </script>
 </head>
 
