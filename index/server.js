@@ -41,11 +41,11 @@ function addForm(file) {
 }
 function loadRisks() {
 
-    var content;
-    $.getJSON('http://www.moosen.im/messages/risks', function (data) {
-        content = data;
-    });
-    console.log(content);
+  //  var content;
+   // $.getJSON('http://www.moosen.im/messages/risks', function (data) {
+       // content = data;
+   // });
+   // console.log(content);
     //site cna have mine, processing plant, offices.
     // add location to user, and indiviual sites are the only thing we need to update. 
     //add image uploads to forms
