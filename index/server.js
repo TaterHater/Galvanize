@@ -7,7 +7,7 @@ var mysql = require('mysql');
 var messages = require('../routes/messages');
 
 var app = express();
-
+var fs = require("fs");
 var httpServer = http.createServer(app).listen(80, function () {
     console.log('http redirect server up and running at port 80');
 });
@@ -30,4 +30,19 @@ var connect = {
     password: "raspberry",
     database: "mooserisk"
 };
+
+function addUser(name, email, isAdmin) {
+    con.query("");
+
+}
+function addForm(file) {
+    //parse file, then add to db
+}
+function loadRisks() {
+    var content = fs.readFileSync("http://www.moosen.im/messages/risks");
+
+
+};
+
 var con = mysql.createConnection(connect); 
+
