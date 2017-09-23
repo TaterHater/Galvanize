@@ -5,14 +5,8 @@ var fs = require('fs');
 var express = require('express');
 var mysql = require('mysql');
 var messages = require('../routes/messages');
-require("jsdom").env("", function (err, window) {
-    if (err) {
-        console.error(err);
-        return;
-    }
+var $ = require("jquery")(window);
 
-    var $ = require("jquery")(window);
-});
 var app = express();
 var fs = require("fs");
 var httpServer = http.createServer(app).listen(80, function () {
