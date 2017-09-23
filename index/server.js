@@ -5,7 +5,7 @@ var fs = require('fs');
 var express = require('express');
 var mysql = require('mysql');
 var messages = require('../routes/messages');
-var $ = require("jquery")(window);
+var $ = require("jquery");
 
 var app = express();
 var fs = require("fs");
