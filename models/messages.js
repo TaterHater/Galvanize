@@ -19,6 +19,9 @@ var messages = {
     GetSites: function (callback) {
         return con.query("SELECT * FROM sites", callback);
     },
+    GetFormBySite: function (site, callback) {
+        return con.query("SELECT * From form where site = ?", [site], callback);
+    },
 
 
 };

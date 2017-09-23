@@ -13,6 +13,17 @@ router.get('/users/:id?', function (req, res, next) {
         });
     }
 });
+router.get('/risks', function (req, res, next) {
+    if (req.params.id) {
+        Mess.GetRisk( function (err, rows) {
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(rows);
+            }
+        });
+    }
+});
 
 
 

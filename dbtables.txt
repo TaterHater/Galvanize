@@ -37,3 +37,6 @@ sites
 | id    | int(11)      | NO   | PRI | NULL    | auto_increment |
 | name  | varchar(255) | YES  |     | NULL    |                |
 +-------+--------------+------+-----+---------+----------------+
+
+API calls
+/users/id
