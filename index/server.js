@@ -40,33 +40,7 @@ function addUser(name, email, isAdmin) {
 }
 
 
-function httpInterface(host, path, method,data) {
-    var options = {
-        host: host,
-        path: path,
-        port: '80',
-        method: method
-    };
-    try {
-        callback = function (response) {
-            var str = ''
-            response.on('data', function (chunk) {
-                str += chunk;
-            });
 
-            response.on('end', function () {
-                console.log(str);
-            });
-        }
-        var req = http.request(options, callback);
-        //This is the data we are posting, it needs to be a string or a buffer
-        if(method === "post")
-        req.write(data);
-        req.end();
-    } catch (e) {
-        console.log(e);
-    }
-}
 function getInfo(path,callback) {
 
     return http.get({
@@ -88,14 +62,8 @@ function getInfo(path,callback) {
     });
 
 }
-getInfo('/messages/risks');
-//http get test
-//require('http').get('http://www.moosen.im/messages/risks', (res) => {
-//    res.setEncoding('utf8');
-//    res.on('data', function (body) {
-//        console.log(body);
-//    });
-//});
+var s = getInfo('/messages/risks');
+console.log(s);
 
 function addForm(file) {
     //parse file, then add to db
