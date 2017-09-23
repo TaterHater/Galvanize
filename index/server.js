@@ -38,7 +38,7 @@ function addUser(name, email, isAdmin) {
     con.query("insert into users (name,email,is_admin) values (?,?,0,?) ", [name, email, isAdmin]);
 }
 
-f
+
 function addForm(file) {
     //parse file, then add to db
     var result;
