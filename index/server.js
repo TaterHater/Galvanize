@@ -67,8 +67,31 @@ function httpInterface(host, path, method,data) {
         console.log(e);
     }
 }
+function getRisks(callback) {
 
-//httpInterface('http://www.moosen.im','/messages/sites','request',0);
+    return http.get({
+        host: 'moosen.im',
+        path: '/risks'
+    }, function (response) {
+        // Continuously update stream with data
+        var body = '';
+        response.on('data', function (d) {
+            body += d;
+        });
+        response.on('end', function () {
+
+            // Data reception is done, do whatever with it!
+            var parsed = JSON.parse(body);
+            console.log(parsed);
+            callback({
+                email: parsed.email,
+                name: parsed.name
+            });
+        });
+    });
+
+}
+getRisks();
 //http get test
 //require('http').get('http://www.moosen.im/messages/risks', (res) => {
 //    res.setEncoding('utf8');
