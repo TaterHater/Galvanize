@@ -9,11 +9,14 @@ var httpServer = http.createServer(app2).listen(80, function () {
     console.log('http redirect server up and running at port 80');
 });
 
+var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "raspberry",
+    database: "mooserisk"
+});
 
-var io = require('socket.io')(httpServer);
-
-
-io.sockets.on('connection', function (socket) {
-
-
-}
+con.connect(function (err) {
+    if (err) throw err;
+    console.log("Connected!");
+});
