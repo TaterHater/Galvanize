@@ -53,10 +53,6 @@
             background-color: grey;
         }
 
-        .third a {
-            line-height: 33.3vh;
-        }
-
         .third-text {
             line-height: 33.3vh;
         }
@@ -90,7 +86,7 @@
             console.log('here!');
             $('#risk-input').submit(function () {
                 event.preventDefault();
-                $('#new-risk').addClass("sixth-text");
+                $('#new-risk').removeClass("third-text").addClass("sixth-text");
                 $('#risk-entered').html($('#risk').val());
                 console.log("risk-input submitted with " + $('#risk').val());
                 $("#collapse1").collapse('hide');
@@ -124,7 +120,7 @@
         </div>
         <div class="panel">
             <div class="panel-heading bp third white">
-                <a data-toggle="collapse" href="#collapse2">My Risks</a>
+                <a class="third-text" data-toggle="collapse" href="#collapse2">My Risks</a>
             </div>
             <div id="collapse2" class="panel-collapse collapse">
                 <div class="panel bp third grey">Panel Body</div>
@@ -133,7 +129,7 @@
         </div>
         <div class="panel">
             <div class="panel-heading bp third blue">
-                <a data-toggle="collapse" href="#collapse3">Dashboard</a>
+                <a class="third-text" data-toggle="collapse" href="#collapse3">Dashboard</a>
             </div>
             <div id="collapse3" class="panel-collapse collapse">
                 <div class="panel-body bp">Panel Body</div>
