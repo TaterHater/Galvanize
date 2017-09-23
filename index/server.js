@@ -20,7 +20,7 @@ app.post('/', function (req, res) {
 });
 
 app.get('/home', function (req, res) {
-    res.sendFile(path.resolve(__dirname + "/../public/html/home.html"));
+    res.sendFile(path.resolve(__dirname + "/../public/home.html"));
 });
 
 //mysql connection
