@@ -5,7 +5,7 @@ var fs = require('fs');
 var express = require('express');
 var mysql = require('mysql');
 var messages = require('../routes/messages');
-var $ = require("jQuery");
+
 
 var app = express();
 var fs = require("fs");
@@ -42,9 +42,8 @@ function addUser(name, email, isAdmin) {
 function addForm(file) {
     //parse file, then add to db
     var result;
-    $.getJSON(file, function (data) {
-        console.log(data);
-    });
+    var frm = JSON.parse(file);
+    console.log(frm);
    
     var form = {
         id: file.id,
