@@ -85,13 +85,12 @@
     <script>
         $(document).ready(function () {
             console.log('here!');
-        });
-        $('#risk-input').submit(function () {
-            console.log('here');
-            $('#risk-entered').text() = $('#risk').val(); //need to add uid eventually
-            console.log("risk-input submitted with " + $('#risk').val());
-            $("#collapse1").collapse('hide');
-            return false;
+            $('#risk-input').submit(function () {
+                console.log('here');
+                $('#risk-entered').text() = $('#risk').val();
+                console.log("risk-input submitted with " + $('#risk').val());
+                $("#collapse1").collapse('hide');
+            });
         });
     </script>
 </head>
