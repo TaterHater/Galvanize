@@ -73,20 +73,19 @@
             background-image: none;
         }
 
-<<<<<<< HEAD
-        .bp a {
+         .bp a {
             text-decoration: none;
         }
-=======
-            .bp a {
-                text-decoration: none;
-            }
+
+         .bp a {
+            text-decoration: none;
+        }
         /* .panel {
             color: #333;
             background-color: #f5f5f5;
             border-color: #ddd;
         } */
->>>>>>> 094c3e1b9c1d0918df9a3c8918c5a604f011b7e8
+        
     </style>
     <script>
         $(document).ready(function () {
@@ -101,29 +100,9 @@
         });
 
         //to get all sites, call getInfo('/sites');
-        function getInfo(path, callback) {
-
-            return http.get({
-                host: 'moosen.im',
-                path: path
-            }, function (response) {
-                // Continuously update stream with data
-                var body = '';
-                response.on('data', function (d) {
-                    body += d;
-                });
-                response.on('end', function () {
-
-                    // Data reception is done, do whatever with it!
-                    var parsed = JSON.parse(body);
-                    
-                    console.log(parsed.id);
-
-                });
-            });
-
-        }
-        getInfo('/messages/risks');
+        $.get('http://www.moosen.im/messages/risks', function (data) {
+            alert("Data Loaded: " + data);
+        });
     </script>
 </head>
 
