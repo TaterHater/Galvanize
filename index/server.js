@@ -38,30 +38,12 @@ function addUser(name, email, isAdmin) {
     con.query("insert into users (name,email,is_admin) values (?,?,0,?) ", [name, email, isAdmin]);
 }
 
-function getJSONP(url, success) {
-
-    var ud = '_' + +new Date,
-        script = document.createElement('script'),
-        head = document.getElementsByTagName('head')[0]
-            || document.documentElement;
-
-    window[ud] = function (data) {
-        head.removeChild(script);
-        success && success(data);
-    };
-
-    script.src = url.replace('callback=?', 'callback=' + ud);
-    head.appendChild(script);
-
-}
+f
 function addForm(file) {
     //parse file, then add to db
     var result;
     try {
-        getJSONP('http://www.moosen.im/messages/risks', function (data) {
-            var frm = JSON.parse(data);
-            console.log(frm);
-        });
+        JSON.parse(file);
 
     }
     catch (e) {
@@ -75,7 +57,7 @@ function addForm(file) {
         uid: file.uid,
     };
 }
-addForm('http://www.moosen.im/messages/risks');
+addForm('{}');
 function loadRisks() {
 
     //  var content;
