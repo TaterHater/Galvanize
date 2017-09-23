@@ -18,5 +18,5 @@ app.post('/', function (req, res) {
 });
 
 app.get('/home', function (req, res) {
-    res.sendFile("../public/html/home.html");
+    res.sendFile("/var/html/Galvanize/public/html/home.html");
 });
