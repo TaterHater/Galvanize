@@ -42,8 +42,8 @@ function addUser(name, email, isAdmin) {
 function addForm(file) {
     //parse file, then add to db
     var result;
-   // var frm = JSON.parse('http://www.moosen.im/messages/risks');
-    console.log("hi");
+    var frm = JSON.parse('{}');
+    console.log(frm);
    
     var form = {
         id: file.id,
