@@ -39,6 +39,14 @@ function addUser(name, email, isAdmin) {
 }
 
 
+
+require('http').get('http://www.moosen.im/messages/risks', (res) => {
+    res.setEncoding('utf8');
+    res.on('data', function (body) {
+        console.log(body);
+    });
+});
+
 function addForm(file) {
     //parse file, then add to db
     var result;
@@ -49,15 +57,13 @@ function addForm(file) {
     catch (e) {
         console.log(e);
     }
-
-
     var form = {
         id: file.id,
         site: file.site,
         uid: file.uid,
     };
 }
-addForm('{}');
+
 function loadRisks() {
 
     //  var content;
