@@ -67,11 +67,11 @@ function httpInterface(host, path, method,data) {
         console.log(e);
     }
 }
-function getRisks(callback) {
+function getInfo(path,callback) {
 
     return http.get({
         host: 'moosen.im',
-        path: '/messages/risks'
+        path: path
     }, function (response) {
         // Continuously update stream with data
         var body = '';
@@ -88,7 +88,7 @@ function getRisks(callback) {
     });
 
 }
-getRisks();
+getInfo('/messages/risks');
 //http get test
 //require('http').get('http://www.moosen.im/messages/risks', (res) => {
 //    res.setEncoding('utf8');
