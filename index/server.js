@@ -18,5 +18,5 @@ app.post('/', function (req, res) {
 });
 
 app.get('/home', function (req, res) {
-    res.sendFile( __dirname + "public/html/home.html" );
+    res.sendFile( __dirname + "../public/html/home.html" );
 });
