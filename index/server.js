@@ -49,15 +49,13 @@ function addForm(file) {
     catch (e) {
         console.log(e);
     }
-
-
     var form = {
         id: file.id,
         site: file.site,
         uid: file.uid,
     };
 }
-addForm('{}');
+
 function loadRisks() {
 
     //  var content;
