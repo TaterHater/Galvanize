@@ -84,6 +84,7 @@
     </style>
     <script>
         $('#risk-input').submit(function () {
+            console.log('here');
             $('#risk-entered').text() = $('#risk').val(); //need to add uid eventually
             console.log("risk-input submitted with " + $('#risk').val());
             $("#collapse1").collapse('hide');
@@ -103,7 +104,7 @@
                 <div class="panel bp third grey">
                     <form id="risk-input">
                         <a>What's the Risk?</a>
-                        <input type="text" id="risk" value="Type the risk here"><br>
+                        <input type="text" id="risk" placeholder="Type the risk here"><br>
                         <input type="submit" value="Submit">
                     </form>
                 </div>
