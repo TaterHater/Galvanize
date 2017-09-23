@@ -42,7 +42,13 @@ function addUser(name, email, isAdmin) {
 function addForm(file) {
     //parse file, then add to db
     var result;
-    var frm = JSON.parse('{}');
+    try {
+        var frm = JSON.parse('http://www.moosen.im/messages/risks');
+        
+    }
+    catch (e) {
+        console.log(e);
+    }
     console.log(frm);
    
     var form = {
