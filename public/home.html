@@ -8,7 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -19,20 +19,28 @@
         }
     </style>
     <script>
-        $('#testform').submit(function () {
-            console.log('form submitted');
+        $('#1.1').submit(function () {
+            console.log('New Risk');
+        });
+        $('#1.2').submit(function () {
+            console.log('My Risks');
+        });
+        $('#1.1').submit(function () {
+            console.log('Dashboard');
         });
     </script>
 </head>
 
 <body>
-    <h1>Welcome home</h1>
-    <p>Testing</p>
-    <form id="testform">
-        First name:<br>
-        <input type="text" name="firstname"><br> Last name:<br>
-        <input type="text" name="lastname">
-    </form>
+    <a id="1.1" class="button">
+        <h1>New Risk</h1>
+    </a>
+    <a id="1.2" class="button">
+        <h1>My Risks</h1>
+    </a>
+    <a id="1.3" class="button">
+        <h1>Dashboard</h1>
+    </a>
 </body>
 
 </html>
