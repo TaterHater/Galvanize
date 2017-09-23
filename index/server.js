@@ -39,7 +39,32 @@ function addUser(name, email, isAdmin) {
 }
 
 
+function httpInterface(host, path, method,data) {
+    var options = {
+        host: host,
+        path: path,
+        port: '80',
+        method: method
+    };
+    callback = function (response) {
+        var str = ''
+        response.on('data', function (chunk) {
+            str += chunk;
+        });
 
+        response.on('end', function () {
+            console.log(str);
+        });
+    }
+    var req = http.request(options, callback);
+    //This is the data we are posting, it needs to be a string or a buffer
+    req.write(data);
+    req.end();
+
+}
+
+httpInterface('http://www.moosen.im','/messages/sites',request,0);
+//http get test
 require('http').get('http://www.moosen.im/messages/risks', (res) => {
     res.setEncoding('utf8');
     res.on('data', function (body) {
