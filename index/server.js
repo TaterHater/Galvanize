@@ -30,8 +30,6 @@ var connect = {
     password: "raspberry",
     database: "mooserisk"
 };
-<<<<<<< HEAD
-var con = sql.createConnection(connect);
 
 function addUser(name, email, isAdmin) {
     con.query("");
@@ -45,6 +43,6 @@ function loadRisks() {
 
 
 };
-=======
+
 var con = mysql.createConnection(connect); 
->>>>>>> origin/master
+
