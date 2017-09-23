@@ -39,4 +39,8 @@ sites
 +-------+--------------+------+-----+---------+----------------+
 
 API calls
-/users/id
+/users/id  - returns user by id
+/risks     - returns all risks ever
+/sites     - returns all sites ever
+/getform/site - returns all forms for 'site'
+
