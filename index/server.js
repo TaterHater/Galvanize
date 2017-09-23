@@ -60,21 +60,22 @@ function httpInterface(host, path, method,data) {
         }
         var req = http.request(options, callback);
         //This is the data we are posting, it needs to be a string or a buffer
+        if(method === "post")
         req.write(data);
         req.end();
     } catch (e) {
-
+        console.log(e);
     }
 }
 
 httpInterface('http://www.moosen.im','/messages/sites','request',0);
 //http get test
-require('http').get('http://www.moosen.im/messages/risks', (res) => {
-    res.setEncoding('utf8');
-    res.on('data', function (body) {
-        console.log(body);
-    });
-});
+//require('http').get('http://www.moosen.im/messages/risks', (res) => {
+//    res.setEncoding('utf8');
+//    res.on('data', function (body) {
+//        console.log(body);
+//    });
+//});
 
 function addForm(file) {
     //parse file, then add to db
