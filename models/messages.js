@@ -13,10 +13,12 @@ var messages = {
     GetUser: function (id, callback) {
         return con.query("SELECT * FROM users WHERE id = ?", [id], callback);
     },
-    GetRisk: function (input, callback) {
-        return con.query("SELECT * FROM risks WHERE name LIKE {?}", [input], callback);
+    GetRisk: function (callback) {
+        return con.query("SELECT * FROM risks", callback);
     },
-
+    GetSites: function (callback) {
+        return con.query("SELECT * FROM sites", callback);
+    },
 
 
 };
