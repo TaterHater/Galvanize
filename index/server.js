@@ -42,8 +42,10 @@ function addUser(name, email, isAdmin) {
 function addForm(file) {
     //parse file, then add to db
     var result;
-   result =  $.getJSON(file);
-   console.log(result);
+    $.getJSON(file, function (data) {
+        console.log(data);
+    });
+   
     var form = {
         id: file.id,
         site: file.site,
