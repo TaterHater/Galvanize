@@ -92,9 +92,9 @@
         });
 
         //to get all sites, call getInfo('/sites');
-        $.get('http://www.moosen.im/messages/risks', function (data) {
-            alert("Data Loaded: " + data.id);
-        });
+        $.get('http://www.moosen.im/messages/risks',  function (data) {
+            alert("Data Loaded: " + data[0].id);
+        },"json");
     </script>
 </head>
 
