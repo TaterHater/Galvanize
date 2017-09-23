@@ -40,42 +40,29 @@ function addUser(name, email, isAdmin) {
 }
 
 
-function httpInterface(host, path, method,data) {
-    var options = {
-        host: host,
-        path: path,
-        port: '80',
-        method: method
-    };
-    try {
-        callback = function (response) {
-            var str = ''
-            response.on('data', function (chunk) {
-                str += chunk;
-            });
 
-            response.on('end', function () {
-                console.log(str);
-            });
-        }
-        var req = http.request(options, callback);
-        //This is the data we are posting, it needs to be a string or a buffer
-        if(method === "post")
-        req.write(data);
-        req.end();
-    } catch (e) {
-        console.log(e);
-    }
+function getInfo(path,callback) {
+
+    return http.get({
+        host: 'moosen.im',
+        path: path
+    }, function (response) {
+        // Continuously update stream with data
+        var body = '';
+        response.on('data', function (d) {
+            body += d;
+        });
+        response.on('end', function () {
+
+            // Data reception is done, do whatever with it!
+            var parsed = JSON.parse(body);
+            console.log(body);
+                
+        });
+    });
+
 }
 
-//httpInterface('http://www.moosen.im','/messages/sites','request',0);
-//http get test
-//require('http').get('http://www.moosen.im/messages/risks', (res) => {
-//    res.setEncoding('utf8');
-//    res.on('data', function (body) {
-//        console.log(body);
-//    });
-//});
 
 function addForm(file) {
     //parse file, then add to db
