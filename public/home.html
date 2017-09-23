@@ -23,10 +23,6 @@
             text-align: center;
         }
 
-        .third a {
-            font-size: 5em;
-        }
-
         .sixth {
             height: 16.7vh;
             text-align: center;
@@ -55,10 +51,12 @@
 
         .third-text {
             line-height: 33.3vh;
+            font-size: 5em;
         }
 
         .sixth-text {
             line-height: 16.7vh;
+            font-size: 2.5em;
         }
 
         .blue a {
@@ -86,8 +84,7 @@
             console.log('here!');
             $('#risk-input').submit(function () {
                 event.preventDefault();
-                $('#new-risk').removeClass("third-text").addClass("sixth-text");
-                $('#risk-entered').html($('#risk').val());
+                $('#new-risk').html($('#risk').val());
                 console.log("risk-input submitted with " + $('#risk').val());
                 $("#collapse1").collapse('hide');
                 return false;
@@ -105,8 +102,7 @@
     <div class="panel-group">
         <div class="panel">
             <div class="panel-heading bp third blue">
-                <a class="third-text" id="new-risk" data-toggle="collapse" href="#collapse1">New Risk</a><br>
-                <a class="sixth-text" id="risk-entered"></a>
+                <a class="third-text" id="new-risk" data-toggle="collapse" href="#collapse1">New Risk</a>
             </div>
             <div id="collapse1" class="panel-collapse collapse">
                 <div class="panel bp third grey">
