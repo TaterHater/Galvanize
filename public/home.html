@@ -25,19 +25,24 @@
 
         .blue {
             background-color: #3333cc;
+        }
+
+        .blue a h1 {
             color: white;
         }
 
         .white {
             background-color: white;
+        }
+
+        .white a h1 {
             color: #3333cc;
         }
     </style>
     <script>
         $(document).ready(function () {
             $("a").click(function () {
-                $(this).hide();
-                console.log($(this));
+                console.log($(this.children[0]));
             });
         });
     </script>
