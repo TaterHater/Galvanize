@@ -83,10 +83,7 @@ function getRisks(callback) {
             // Data reception is done, do whatever with it!
            // var parsed = JSON.parse(body);
             console.log(body);
-            callback({
-               // email: parsed.email,
-               // name: parsed.name
-            });
+            
         });
     });
 
