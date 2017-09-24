@@ -91,7 +91,7 @@ function addForm(file) {
 function loadRisks() {
 
     //  var content;
-    // $.getJSON('http://www.moosen.im/messages/risks', function (data) {
+    // $.getJSON('http://moosen.im/messages/risks', function (data) {
     // content = data;
     // });
     // console.log(content);

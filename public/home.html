@@ -136,17 +136,17 @@
         }
 
         //to get all sites, call getInfo('/sites');
-        // var riskList = {};
-        // $.get('http://www.moosen.im/messages/risks', function (data) {
+         var riskList = [];
+         $.get('http://moosen.im/messages/risks', function (data) {
 
-        //     data.forEach(function () { riskList.push(data); });
-        // }, "json");
+             data.forEach(function () { riskList.push(data); });
+         }, "json");
         // //update leaderboard
         // var leaderboard = {};
-        // $.get('http://www.moosen.im/messages/leaderboard', function (data) {
+         $.get('http://moosen.im/messages/leaderboard', function (data) {
 
         //     data.forEach(function () { leaderboard.push(data); });
-        // }, "json");
+         }, "json");
 
         function showLeaderboard(lb) {
 
