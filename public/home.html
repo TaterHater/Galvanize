@@ -108,12 +108,7 @@
         function home() {
             $("panel-group").empty();
             $("panel-group").attr("id", "home");
-            $("panel-group").add("div").addClass("panel").attr("id", "panel1");
-            $("#panel1").html('<div class="panel-heading bp third blue"><a class="third-text" onClick="newRisk()">New Risk</a></div>');
-            $("panel-group").add("div").addClass("panel").attr("id", "panel2");
-            $("#panel2").html('<div class="panel-heading bp third white"><a class="third-text" onClick="todaysRisks()">Today\'s Risks</a></div>');
-            $("panel-group").add("div").addClass("panel").attr("id", "panel3");
-            $("#panel3").html('<div class="panel-heading bp third blue"><a class="third-text" onClick="dashboard()">Dashboard</a></div>');
+            $("panel-group").html('<div id="panel1" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="newRisk()">New Risk</a></div></div><div id="panel2" class="panel"><div class="panel-heading bp third white"><a class="third-text" onClick="todaysRisks()">Today\'s Risks</a></div></div><div id="panel3" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="dashboard()">Dashboard</a></div></div>');
         }
 
         function back() {
