@@ -97,6 +97,20 @@
 
             data.forEach(function () { riskList.push(data); });
         }, "json");
+        //update leaderboard
+        var leaderboard;
+        $.get('http://www.moosen.im/messages/leaderboard', function (data) {
+
+            data.forEach(function () { leaderboard.push(data); });
+        }, "json");
+
+        function showLeaderboard(lb) {
+
+            lb.name;
+            lb.score;
+            //append lb to a list defined with jquery for when we have that. 
+        }
+
 
 
 
