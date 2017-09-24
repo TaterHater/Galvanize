@@ -42,7 +42,7 @@ router.get('/getform/:site?', function (req, res, next) {
         });
     }
 });
-outer.get('/getform/:uid?', function (req, res, next) {
+router.get('/getform/:uid?', function (req, res, next) {
     if (req.params.site) {
         Mess.GetformBySite(req.params.site, function (err, rows) {
             if (err) {
