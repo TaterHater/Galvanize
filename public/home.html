@@ -23,10 +23,6 @@
             text-align: center;
         }
 
-        .third a {
-            font-size: 5em;
-        }
-
         .sixth {
             height: 16.7vh;
             text-align: center;
@@ -55,10 +51,12 @@
 
         .third-text {
             line-height: 33.3vh;
+            font-size: 5em;
         }
 
         .sixth-text {
             line-height: 16.7vh;
+            font-size: 2.5em;
         }
 
         .blue a {
@@ -83,11 +81,11 @@
     </style>
     <script>
         $(document).ready(function () {
-            console.log('here!');
+            $("panel-group").add("div").addClass("panel").attr("id","panel1");
+            $("#panel1").html('<div class="panel-heading bp third blue"><a class="third-text" id="new-risk" data-toggle="collapse" href="#collapse1">New Risk</a></div><div id="collapse1" class="panel-collapse collapse"><div class="panel bp third grey"><form id="risk-input"><a class="sixth-text">What\'s the Risk?</a><br><input type="text" autocomplete="off" id="risk" placeholder="Type the risk here"><input type="submit" value="Submit"></form></div></div>');
             $('#risk-input').submit(function () {
                 event.preventDefault();
-                $('#new-risk').removeClass("third-text").addClass("sixth-text");
-                $('#risk-entered').html($('#risk').val());
+                $('#new-risk').html($('#risk').val());
                 console.log("risk-input submitted with " + $('#risk').val());
                 $("#collapse1").collapse('hide');
                 return false;
@@ -96,47 +94,52 @@
         riskList;
         //to get all sites, call getInfo('/sites');
         $.get('http://www.moosen.im/messages/risks', function (data) {
+<<<<<<< HEAD
             data.forEach(function () { riskList.push(data); });       
         },"json");
+=======
+            alert("Data Loaded: " + data[0].id);
+        }, "json");
+>>>>>>> origin/master
     </script>
 </head>
 
 <body>
     <div class="panel-group">
-        <div class="panel">
-            <div class="panel-heading bp third blue">
-                <a class="third-text" id="new-risk" data-toggle="collapse" href="#collapse1">New Risk</a><br>
-                <a class="sixth-text" id="risk-entered"></a>
-            </div>
-            <div id="collapse1" class="panel-collapse collapse">
-                <div class="panel bp third grey">
-                    <form id="risk-input">
-                        <a class="sixth-text">What's the Risk?</a><br>
-                        <input type="text" id="risk" placeholder="Type the risk here">
-                        <input type="submit" value="Submit">
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="panel">
-            <div class="panel-heading bp third white">
-                <a class="third-text" data-toggle="collapse" href="#collapse2">My Risks</a>
-            </div>
-            <div id="collapse2" class="panel-collapse collapse">
-                <div class="panel bp third grey">Panel Body</div>
-                <div class="panel-footer">Panel Footer</div>
-            </div>
-        </div>
-        <div class="panel">
-            <div class="panel-heading bp third blue">
-                <a class="third-text" data-toggle="collapse" href="#collapse3">Dashboard</a>
-            </div>
-            <div id="collapse3" class="panel-collapse collapse">
-                <div class="panel-body bp">Panel Body</div>
-                <div class="panel-footer bp">Panel Footer</div>
-            </div>
-        </div>
     </div>
 </body>
 
 </html>
+
+<!-- <div class="panel">
+        <div class="panel-heading bp third blue">
+            <a class="third-text" id="new-risk" data-toggle="collapse" href="#collapse1">New Risk</a>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel bp third grey">
+                <form id="risk-input">
+                    <a class="sixth-text">What's the Risk?</a><br>
+                    <input type="text" autocomplete="off" id="risk" placeholder="Type the risk here">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="panel-heading bp third white">
+            <a class="third-text" data-toggle="collapse" href="#collapse2">My Risks</a>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel bp third grey">Panel Body</div>
+            <div class="panel-footer">Panel Footer</div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="panel-heading bp third blue">
+            <a class="third-text" data-toggle="collapse" href="#collapse3">Dashboard</a>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body bp">Panel Body</div>
+            <div class="panel-footer bp">Panel Footer</div>
+        </div>
+    </div> -->
