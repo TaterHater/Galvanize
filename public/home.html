@@ -142,6 +142,9 @@
         $.get('http://moosen.im/messages/leaderboard', function (data) {
 
             data.forEach(function () { leaderboard.push(data); });
+            leaderboard.forEach(function (d) {
+                console.log("name: " + d.name + " score: " + score);
+            });
         }, "json");
         leaderboard.forEach(function (d) {
             console.log("name: " + d.name + " score: " + score);
