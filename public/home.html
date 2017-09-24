@@ -168,6 +168,7 @@
         }
 
         function dashboard() {
+            showLeaderboard(leaderboard);
             $("#main").empty();
             $("#main").attr("back", "dashboard");
             $("#main").html(
@@ -211,12 +212,12 @@
         function showLeaderboard(lb) {
             leaderboard.forEach(function (d) {
                 $("#leaderboard-list").append("<ul>name: " + d.name + " score: " + d.score + "</ul>");
-                console.log("name: " + d.name + " score: " + d.score);
+                
             });
            
             //append lb to a list defined with jquery for when we have that.
         }
-        showLeaderboard(leaderboard);
+        
     </script>
 </head>
 
