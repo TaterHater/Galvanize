@@ -17,6 +17,11 @@
         .p {
             background-color: yellow;
         }
+        
+        .half {
+            height: 50vh;
+            text-align: center;
+        }
 
         .third {
             height: 33.3vh;
@@ -26,10 +31,6 @@
         .sixth {
             height: 16.7vh;
             text-align: center;
-        }
-
-        .sixth a {
-            font-size: 2.5em;
         }
 
         .two-third {
@@ -47,6 +48,11 @@
 
         .grey {
             background-color: grey;
+        }
+
+        .half-text {
+            line-height: 50vh;
+            font-size: 8em;
         }
 
         .third-text {
@@ -98,12 +104,6 @@
             home();
         });
 
-        function home() {
-            $("#main").empty();
-            $("#main").attr("back", "home");
-            $("#main").html('<div id="panel1" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="newRisk()">New Risk</a></div></div><div id="panel2" class="panel"><div class="panel-heading bp third white"><a class="third-text" onClick="todaysRisks()">Today\'s Risks</a></div></div><div id="panel3" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="dashboard()">Dashboard</a></div></div>');
-        }
-
         function back() {
             $("main").empty();
             console.log($("#main").attr("back"));
@@ -113,22 +113,78 @@
             }
         }
 
+        function home() {
+            $("#main").empty();
+            $("#main").attr("back", "home");
+            $("#main").html(
+                '<div id="panel1" class="panel">' +
+                    '<div class="panel-heading bp third blue">' +
+                        '<a class="third-text" onClick="newRisk()">New Risk</a>' +
+                    '</div>' +
+                '</div>' +
+                '<div id="panel2" class="panel">' +
+                    '<div class="panel-heading bp third white">' +
+                        '<a class="third-text" onClick="todaysRisks()">Today\'s Risks</a>' +
+                    '</div>' +
+                '</div>' +
+                '<div id="panel3" class="panel">' +
+                    '<div class="panel-heading bp third blue">' +
+                        '<a class="third-text" onClick="dashboard()">Dashboard</a>' +
+                    '</div>' +
+                '</div>'
+            );
+        }
+
         function newRisk() {
             $("#main").empty();
             $("#main").attr("back", "newRisk");
-            $("#main").html('<div id="panel1" class="panel"><div id="new-risk-panel" class="panel-heading bp third blue"><a class="third-text" onClick="riskName()">Risk name</a></div></div>');
+            $("#main").html(
+                '<div id="panel1" class="panel">' +
+                    '<div id="risk-name" class="panel-heading bp third blue">' +
+                        '<a class="third-text" onClick="riskName()">Risk name</a>' +
+                    '</div>' +
+                '</div>' +
+                '<div id="panel2" class="panel">' +
+                    '<div class="panel-heading bp third white">' +
+                        '<a class="third-text" onClick="riskSite()">Risk Site</a>' +
+                    '</div>' +
+                '</div>' +
+                '<div id="panel3" class="panel">' +
+                    '<div class="panel-heading bp third blue">' +
+                        '<a class="third-text" onClick="dashboard()">Dashboard</a>' +
+                    '</div>' +
+                '</div>'
+            );
         }
 
         function todaysRisks() {
             $("#main").empty();
             $("#main").attr("back", "todaysRisks");
-            $("#main").html('<div id="new-risk-panel" class="panel-heading bp third blue"><a class="third-text" onClick="todaysRisks()">These are the risks</a></div>');
+            $("#main").html(
+                '<div class="panel-heading bp third blue">' +
+                    '<a class="third-text" onClick="todaysRisks()">These are the risks</a>' +
+                '</div>'
+            );
         }
 
         function dashboard() {
             $("#main").empty();
             $("#main").attr("back", "dashboard");
-            $("#main").html('<div id="new-risk-panel" class="panel-heading bp third blue"><a class="third-text" onClick="dashboard()">Dashboard shit</a></div>');
+            $("#main").html(
+                '<div id="new-risk-panel" class="panel-heading bp third blue">' +
+                    '<a class="third-text" onClick="dashboard()">Dashboard shit</a>' +
+                '</div>'
+            );
+        }
+
+        function riskName() {
+            $("#main").empty();
+            $("#main").attr("back", "dashboard");
+            $("#main").html(
+                '<div id="new-risk-panel" class="panel-heading bp third blue">' +
+                    '<a class="third-text" onClick="dashboard()">Dashboard shit</a>' +
+                '</div>'
+            );
         }
 
         //to get all sites, call getInfo('/sites');
