@@ -80,17 +80,71 @@
         }
     </style>
     <script>
+        var risk;
+        var site;
+        var tools;
+        var equipment;
+        var environment;
+        var a;
+        var backRelay = {
+            "newRisk": "home",
+            "home": "home",
+            "todaysRisks": "home",
+            "dashboard": "home",
+            "riskName": "newRisk"
+        };
+
         $(document).ready(function () {
-            $("panel-group").add("div").addClass("panel").attr("id","panel1");
-            $("#panel1").html('<div class="panel-heading bp third blue"><a class="third-text" id="new-risk" data-toggle="collapse" href="#collapse1">New Risk</a></div><div id="collapse1" class="panel-collapse collapse"><div class="panel bp third grey"><form id="risk-input"><a class="sixth-text">What\'s the Risk?</a><br><input type="text" autocomplete="off" id="risk" placeholder="Type the risk here"><input type="submit" value="Submit"></form></div></div>');
-            $('#risk-input').submit(function () {
-                event.preventDefault();
-                $('#new-risk').html($('#risk').val());
-                console.log("risk-input submitted with " + $('#risk').val());
-                $("#collapse1").collapse('hide');
-                return false;
-            });
+            home();
+            // $('#risk-input').submit(function () {
+            //     event.preventDefault();
+            //     $('#new-risk').html($('#risk').val());
+            //     console.log("risk-input submitted with " + $('#risk').val());
+            //     $("#collapse1").collapse('hide');
+            //     return false;
+            // });
         });
+
+        function home() {
+            $("panel-group").empty();
+            $("panel-group").attr("id", "home");
+            $("panel-group").add("div").addClass("panel").attr("id", "panel1");
+            $("#panel1").html('<div class="panel-heading bp third blue"><a class="third-text" onClick="newRisk()">New Risk</a></div>');
+            $("panel-group").add("div").addClass("panel").attr("id", "panel2");
+            $("#panel2").html('<div class="panel-heading bp third white"><a class="third-text" onClick="todaysRisks()">Today\'s Risks</a></div>');
+            $("panel-group").add("div").addClass("panel").attr("id", "panel3");
+            $("#panel3").html('<div class="panel-heading bp third blue"><a class="third-text" onClick="dashboard()">Dashboard</a></div>');
+        }
+
+        function back() {
+            $("panel-group").empty();
+            console.log($("panel-group").attr("id"));
+            var fn = window[backRelay[$("panel-group").attr("id")]];
+            if (typeof fn === 'function') {
+                fn();
+            }
+        }
+
+        function newRisk() {
+            $("panel-group").empty();
+            $("panel-group").attr("id", "newRisk");
+            $("panel-group").add("div").addClass("panel").attr("id", "panel1");
+            $("#panel1").html('<div id="new-risk-panel" class="panel-heading bp third blue"><a class="third-text" onClick="riskName()">Risk name</a></div>');
+        }
+
+        function todaysRisks() {
+            $("panel-group").empty();
+            $("panel-group").attr("id", "newRisk");
+            $("panel-group").add("div").addClass("panel").attr("id", "panel1");
+            $("#panel1").html('<div id="new-risk-panel" class="panel-heading bp third blue"><a class="third-text" onClick="riskName()">These are the risks</a></div>');
+        }
+
+        function dashboard() {
+            $("panel-group").empty();
+            $("panel-group").attr("id", "newRisk");
+            $("panel-group").add("div").addClass("panel").attr("id", "panel1");
+            $("#panel1").html('<div id="new-risk-panel" class="panel-heading bp third blue"><a class="third-text" onClick="riskName()">Dashboard shit</a></div>');
+        }
 
         //to get all sites, call getInfo('/sites');
         $.get('http://www.moosen.im/messages/risks', function (data) {
@@ -100,6 +154,7 @@
 </head>
 
 <body>
+    <button onclick="back()">Back</button>
     <div class="panel-group">
     </div>
 </body>
