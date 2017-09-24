@@ -169,6 +169,7 @@
 
         function dashboard() {
             showLeaderboard(leaderboard);
+            showRisks(riskList);
             $("#main").empty();
             $("#main").attr("back", "dashboard");
             $("#main").html(
@@ -197,7 +198,7 @@
         var riskList = [];
         $.get('http://moosen.im/messages/risks', function (data) {
 
-            data.forEach(function () { riskList.push(data); });
+            riskList = data;
         }, "json");
         // //update leaderboard
         var leaderboard = [];
@@ -212,10 +213,18 @@
         function showLeaderboard(lb) {
            
             lb.forEach(function (d) {
-                $("#leaderboard-list").append("<li> name: " + d.name + " score: " + d.score+"</li>");
+                $("#leaderboard-list").append("<li><h2> name: " + d.name + " score: " + d.score + "</h2></li > ");
                // console.log("name: " + d.name + " score: " + d.score);
                // console.log(d);
             });
+
+            function showRisks(lb) {
+
+                lb.forEach(function (d) {
+                  //  $("#risk-list").append("<li><h2> name: " + d.name + " score: " + d.score + "</h2></li > ");
+                     console.log("name: " + d.name + " score: " + d.severity);
+                    // console.log(d);
+                });
            
             //append lb to a list defined with jquery for when we have that.
         }
