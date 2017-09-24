@@ -95,7 +95,6 @@
         };
 
         $(document).ready(function () {
-<<<<<<< HEAD
             home();
             // $('#risk-input').submit(function () {
             //     event.preventDefault();
@@ -147,19 +146,6 @@
             $("#panel1").html('<div id="new-risk-panel" class="panel-heading bp third blue"><a class="third-text" onClick="riskName()">Dashboard shit</a></div>');
         }
 
-=======
-            $("panel-group").add("div").addClass("panel").attr("id", "panel1");
-            $("#panel1").html('<div class="panel-heading bp third blue"><a class="third-text" id="new-risk" data-toggle="collapse" href="#collapse1">New Risk</a></div><div id="collapse1" class="panel-collapse collapse"><div class="panel bp third grey"><form id="risk-input"><a class="sixth-text">What\'s the Risk?</a><br><input type="text" autocomplete="off" id="risk" placeholder="Type the risk here"><input type="submit" value="Submit"></form></div></div>');
-            $('#risk-input').submit(function () {
-                event.preventDefault();
-                $('#new-risk').html($('#risk').val());
-                console.log("risk-input submitted with " + $('#risk').val());
-                $("#collapse1").collapse('hide');
-                return false;
-            });
-        });
-        var riskList;
->>>>>>> 77f4297fbfedc547a44809df0a9622ae3396b540
         //to get all sites, call getInfo('/sites');
         $.get('http://www.moosen.im/messages/risks', function (data) {
 
