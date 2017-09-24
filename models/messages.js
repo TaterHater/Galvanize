@@ -22,7 +22,9 @@ var messages = {
     GetFormBySite: function (site, callback) {
         return con.query("SELECT * From form where site = ?", [site], callback);
     },
-
+    getLeaderboard: function (callback) {
+        return con.query("SELECT * FROM ( SELECT * FROM users ORDER BY score DESC LIMIT 10) sub ORDER BY  score ASC", callback);
+    }
 
 };
 module.exports = messages;

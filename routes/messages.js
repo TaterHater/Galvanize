@@ -42,6 +42,15 @@ router.get('/getform/:site?', function (req, res, next) {
         });
     }
 });
+router.get('/leaderboard', function (req, res, next) {
+    Mess.getLeaderboard(function (err, rows) {
+        if (err) {
+            res.json(err);
+        } else {
+            res.json(rows);
+        }
+    });
+});
 
 
 module.exports = router;
