@@ -7,7 +7,7 @@
     <title></title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
 
@@ -28,9 +28,9 @@
             text-align: center;
         }
 
-        .sixth a {
-            font-size: 2.5em;
-        }
+            .sixth a {
+                font-size: 2.5em;
+            }
 
         .two-third {
             height: 66.7vh;
@@ -75,9 +75,9 @@
             background-image: none;
         }
 
-        .bp a {
-            text-decoration: none;
-        }
+            .bp a {
+                text-decoration: none;
+            }
     </style>
     <script>
         var risk;
@@ -138,17 +138,17 @@
             data.forEach(function () { riskList.push(data); });
         }, "json");
         // //update leaderboard
-        // var leaderboard = {};
+        var leaderboard = [];
         $.get('http://moosen.im/messages/leaderboard', function (data) {
 
-            //     data.forEach(function () { leaderboard.push(data); });
+            data.forEach(function () { leaderboard.push(data); });
         }, "json");
 
         function showLeaderboard(lb) {
 
             lb.name;
             lb.score;
-            //append lb to a list defined with jquery for when we have that. 
+            //append lb to a list defined with jquery for when we have that.
         }
     </script>
 </head>
