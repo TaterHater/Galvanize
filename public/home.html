@@ -203,7 +203,7 @@
         $.get('http://moosen.im/messages/leaderboard', function (data) {
 
             data.forEach(function () { leaderboard.push(data); });
-            
+            console.log(data+" data");
         }, "json");
 
         leaderboard.forEach(function (d) {
@@ -212,7 +212,7 @@
         function showLeaderboard(lb) {
             lb.forEach(function (d) {
                 $("#leaderboard-list").append("<ul>name: " + d.name + " score: " + d.score + "</ul>");
-                console.log("name: " + d.name + " score: " + d.score);
+                console.log(d);
             });
            
             //append lb to a list defined with jquery for when we have that.
