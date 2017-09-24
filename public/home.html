@@ -95,8 +95,8 @@
         };
 
         $(document).ready(function () {
-            $("main").attr("id", "home");
-            $("main").html('<div id="panel1" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="newRisk()">New Risk</a></div></div><div id="panel2" class="panel"><div class="panel-heading bp third white"><a class="third-text" onClick="todaysRisks()">Today\'s Risks</a></div></div><div id="panel3" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="dashboard()">Dashboard</a></div></div>');
+            $("#test").attr("id", "home");
+            $("#home").html('<div id="panel1" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="newRisk()">New Risk</a></div></div><div id="panel2" class="panel"><div class="panel-heading bp third white"><a class="third-text" onClick="todaysRisks()">Today\'s Risks</a></div></div><div id="panel3" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="dashboard()">Dashboard</a></div></div>');
         });
 
         function home() {
@@ -163,7 +163,7 @@
 
 <body>
     <button onclick="back()">Back</button>
-    <div class="panel-group main">
+    <div class="panel-group main" id="test">
     </div>
 </body>
 
