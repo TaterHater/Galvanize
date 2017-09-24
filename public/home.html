@@ -142,17 +142,17 @@
         $.get('http://moosen.im/messages/leaderboard', function (data) {
 
             data.forEach(function () { leaderboard.push(data); });
-            leaderboard.forEach(function (d) {
-                console.log("name: " + d.name + " score: " + d.score);
-            });
+            
         }, "json");
+
         leaderboard.forEach(function (d) {
             console.log("name: " + d.name + " score: " + d.score);
         });
         function showLeaderboard(lb) {
-
-            lb.name;
-            lb.score;
+            leaderboard.forEach(function (d) {
+                console.log("name: " + d.name + " score: " + d.score);
+            });
+            showLeaderboard(leaderboard);
             //append lb to a list defined with jquery for when we have that.
         }
     </script>
