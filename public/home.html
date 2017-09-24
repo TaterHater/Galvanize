@@ -165,8 +165,8 @@
                 '<div class="panel-heading bp third blue">' +
                     '<a class="third-text" onClick="todaysRisks()">These are the risks</a>' +
                 '</div>' +
-                '<div dashboard-main class="panel-heading bp third white">' +
-                '<h5>All Risks</h5> <ul id="risk-list">' +
+                '<div id="risk-main" class="panel-heading bp third white">' +
+                '<h4>All Risks</h4> <ul id="risk-list">' +
                 '</ul>' +
                 '</div > '
             );
@@ -179,10 +179,10 @@
             $("#main").attr("back", "dashboard");
             $("#main").html(
                 '<div id="new-risk-panel" class="panel-heading bp third blue">' +
-                    '<a class="third-text" onClick="dashboard()">Dashboard shit</a>' +
+                    '<a class="third-text" onClick="dashboard()">Dashboard</a>' +
                 '</div>' +
-                '<div dashboard-main class="panel-heading bp third white">' +
-                    '<h3>kLeader Boards</h3> <ul id="leaderboard-list">' +
+                '<div id="dashboard-main" class="panel-heading bp third white">' +
+                    '<h3>LeaderBoards</h3> <ul id="leaderboard-list">' +
                     '</ul>'+
                 '</div > '
             );
@@ -229,8 +229,7 @@
                      console.log("name: " + d.name + " score: " + d.severity);
                     // console.log(d);
                 });
-           
-            //append lb to a list defined with jquery for when we have that.
+         
         }
         
     </script>
