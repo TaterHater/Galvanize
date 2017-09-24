@@ -145,13 +145,13 @@
         var riskList = {};
         $.get('http://www.moosen.im/messages/risks', function (data) {
 
-            data.forEach(function () { riskList.push(data); });
+           // data.forEach(function () { riskList.push(data); });
         }, "json");
         //update leaderboard
         var leaderboard = {};
         $.get('http://www.moosen.im/messages/leaderboard', function (data) {
 
-            data.forEach(function () { leaderboard.push(data); });
+          //  data.forEach(function () { leaderboard.push(data); });
         }, "json");
 
         function showLeaderboard(lb) {
