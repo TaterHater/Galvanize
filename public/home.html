@@ -210,9 +210,9 @@
             console.log("name: " + d.name + " score: " + d.score);
         });
         function showLeaderboard(lb) {
-            leaderboard.forEach(function (d) {
+            lb.forEach(function (d) {
                 $("#leaderboard-list").append("<ul>name: " + d.name + " score: " + d.score + "</ul>");
-                
+                console.log("name: " + d.name + " score: " + d.score);
             });
            
             //append lb to a list defined with jquery for when we have that.
