@@ -141,7 +141,16 @@
             $("#main").html(
                 '<div id="panel1" class="panel">' +
                     '<div id="risk-name" class="panel-heading bp third blue">' +
-                        '<a class="third-text" onClick="riskName()">Risk name</a>' +
+                        '<a class="third-text" data-toggle="collapse">Risk name</a>' +
+                    '</div>' +
+                    '<div id="collapse1" class="panel-collapse collapse">' +
+                        '<div class="panel bp third grey">' +
+                            '<form id="risk-input">' +
+                                '<a class="sixth-text">What\'s the Risk?</a><br>' +
+                                '<input type="text" autocomplete="off" id="risk" placeholder="Type the risk here">' +
+                                '<input type="submit" value="Submit">' +
+                            '</form>' +
+                        '</div>' +
                     '</div>' +
                 '</div>' +
                 '<div id="panel2" class="panel">' +
@@ -184,15 +193,14 @@
                     '<h3>LeaderBoards</h3>' +
                     '<ul id="leaderboard-list">' +
                     '</ul>' +
-                '</div > '
+                '</div>'
             );
             showLeaderboard(leaderboard);
         }
 
         function riskName() {
-            $("#main").empty();
-            $("#main").attr("back", "dashboard");
-            $("#main").html(
+            $("#main").attr("back", "riskName");
+            $("#risk-name").append(
                 '<div id="new-risk-panel" class="panel-heading bp third blue">' +
                     '<a class="third-text" onClick="dashboard()">Dashboard shit</a>' +
                 '</div>'
