@@ -202,13 +202,12 @@
         var leaderboard = [];
         $.get('http://moosen.im/messages/leaderboard', function (data) {
 
-            data.forEach(function () { leaderboard.push(data); });
+            leaderboard = data;
+           // data.forEach(function () { leaderboard.push(data); });
             console.log(data+" data");
         }, "json");
 
-        leaderboard.forEach(function (d) {
-            console.log("name: " + d.name + " score: " + d.score);
-        });
+      
         function showLeaderboard(lb) {
             console.log(lb);
             lb.forEach(function (d) {
