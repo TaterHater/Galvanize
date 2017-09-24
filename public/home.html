@@ -166,7 +166,7 @@
                     '<a class="third-text" onClick="todaysRisks()">These are the risks</a>' +
                 '</div>' +
                 '<div dashboard-main class="panel-heading bp third white">' +
-                '<h3>All Risks</h3> <ul id="risk-list">' +
+                '<h5>All Risks</h5> <ul id="risk-list">' +
                 '</ul>' +
                 '</div > '
             );
@@ -225,8 +225,8 @@
             function showRisks(lb) {
 
                 lb.forEach(function (d) {
-                    $("#risk-list").append("<li><h2> name: " + d.name + " score: " + d.score + "</h2></li > ");
-                    // console.log("name: " + d.name + " score: " + d.severity);
+                    $("#risk-list").append("<li><h2> name: " + d.name + " risk level  " + d.severity + "</h2></li > ");
+                     console.log("name: " + d.name + " score: " + d.severity);
                     // console.log(d);
                 });
            
