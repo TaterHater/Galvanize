@@ -209,10 +209,11 @@
 
       
         function showLeaderboard(lb) {
-            console.log(lb);
+           
             lb.forEach(function (d) {
                 $("#leaderboard-list").append("<ul>name: " + d.name + " score: " + d.score + "</ul>");
-                console.log(d);
+                console.log("name: " + d.name + " score: " + d.score);
+               // console.log(d);
             });
            
             //append lb to a list defined with jquery for when we have that.
