@@ -7,7 +7,7 @@
     <title></title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
 
@@ -17,7 +17,7 @@
         .p {
             background-color: yellow;
         }
-        
+
         .half {
             height: 50vh;
             text-align: center;
@@ -81,9 +81,9 @@
             background-image: none;
         }
 
-            .bp a {
-                text-decoration: none;
-            }
+        .bp a {
+            text-decoration: none;
+        }
     </style>
     <script>
         var risk;
@@ -118,19 +118,19 @@
             $("#main").attr("back", "home");
             $("#main").html(
                 '<div id="panel1" class="panel">' +
-                    '<div class="panel-heading bp third blue">' +
-                        '<a class="third-text" onClick="newRisk()">New Risk</a>' +
-                    '</div>' +
+                '<div class="panel-heading bp third blue">' +
+                '<a class="third-text" onClick="newRisk()">New Risk</a>' +
+                '</div>' +
                 '</div>' +
                 '<div id="panel2" class="panel">' +
-                    '<div class="panel-heading bp third white">' +
-                        '<a class="third-text" onClick="todaysRisks()">Today\'s Risks</a>' +
-                    '</div>' +
+                '<div class="panel-heading bp third white">' +
+                '<a class="third-text" onClick="todaysRisks()">Today\'s Risks</a>' +
+                '</div>' +
                 '</div>' +
                 '<div id="panel3" class="panel">' +
-                    '<div class="panel-heading bp third blue">' +
-                        '<a class="third-text" onClick="dashboard()">Dashboard</a>' +
-                    '</div>' +
+                '<div class="panel-heading bp third blue">' +
+                '<a class="third-text" onClick="dashboard()">Dashboard</a>' +
+                '</div>' +
                 '</div>'
             );
         }
@@ -140,19 +140,19 @@
             $("#main").attr("back", "newRisk");
             $("#main").html(
                 '<div id="panel1" class="panel">' +
-                    '<div id="risk-name" class="panel-heading bp third blue">' +
-                        '<a class="third-text" onClick="riskName()">Risk name</a>' +
-                    '</div>' +
+                '<div id="risk-name" class="panel-heading bp third blue">' +
+                '<a class="third-text" onClick="riskName()">Risk name</a>' +
+                '</div>' +
                 '</div>' +
                 '<div id="panel2" class="panel">' +
-                    '<div class="panel-heading bp third white">' +
-                        '<a class="third-text" onClick="riskSite()">Risk Site</a>' +
-                    '</div>' +
+                '<div class="panel-heading bp third white">' +
+                '<a class="third-text" onClick="riskSite()">Risk Site</a>' +
+                '</div>' +
                 '</div>' +
                 '<div id="panel3" class="panel">' +
-                    '<div class="panel-heading bp third blue">' +
-                        '<a class="third-text" onClick="dashboard()">Dashboard</a>' +
-                    '</div>' +
+                '<div class="panel-heading bp third blue">' +
+                '<a class="third-text" onClick="dashboard()">Dashboard</a>' +
+                '</div>' +
                 '</div>'
             );
         }
@@ -166,15 +166,16 @@
                     '<a class="third-text" onClick="todaysRisks()">These are the risks</a>' +
                 '</div>' +
                 '<div id="risk-main" class="panel-heading bp third white">' +
-                '<h4>All Risks</h4> <ul id="risk-list">' +
-                '</ul>' +
+                    '<h4>All Risks</h4>' +
+                    '<ul id="risk-list">' +
+                    '</ul>' +
                 '</div > '
             );
         }
 
         function dashboard() {
             showLeaderboard(leaderboard);
-           
+
             $("#main").empty();
             $("#main").attr("back", "dashboard");
             $("#main").html(
@@ -182,8 +183,9 @@
                     '<a class="third-text" onClick="dashboard()">Dashboard</a>' +
                 '</div>' +
                 '<div id="dashboard-main" class="panel-heading bp third white">' +
-                    '<h3>LeaderBoards</h3> <ul id="leaderboard-list">' +
-                    '</ul>'+
+                    '<h3>LeaderBoards</h3>' +
+                    '<ul id="leaderboard-list">' +
+                    '</ul>' +
                 '</div > '
             );
             showLeaderboard(leaderboard);
@@ -204,16 +206,17 @@
         $.get('http://moosen.im/messages/risks', function (data) {
 
             riskList = data;
+            console.log(data + " risklist data");
         }, "json");
         // //update leaderboard
         var leaderboard = [];
         $.get('http://moosen.im/messages/leaderboard', function (data) {
 
             leaderboard = data;
-           // data.forEach(function () { leaderboard.push(data); });
-            console.log(data+" data");
+            // data.forEach(function () { leaderboard.push(data); });
+            console.log(data + " leaderboard data");
         }, "json");
-        
+
         function showLeaderboard(lb) {
 
             lb.forEach(function (d) {
@@ -222,16 +225,15 @@
                 // console.log(d);
             });
         }
-            function showRisks(lb) {
+        function showRisks(lb) {
 
-                lb.forEach(function (d) {
-                    $("#risk-list").append("<li><h2> name: " + d.name + " risk level  " + d.severity + "</h2></li > ");
-                     console.log("name: " + d.name + " score: " + d.severity);
-                    // console.log(d);
-                });
-         
+            lb.forEach(function (d) {
+                $("#risk-list").append("<li><h2> name: " + d.name + " risk level  " + d.severity + "</h2></li > ");
+                // console.log("name: " + d.name + " severity: " + d.severity);
+                // console.log(d);
+            });
+
         }
-        
     </script>
 </head>
 
