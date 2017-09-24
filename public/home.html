@@ -210,6 +210,7 @@
             console.log("name: " + d.name + " score: " + d.score);
         });
         function showLeaderboard(lb) {
+            console.log(lb);
             lb.forEach(function (d) {
                 $("#leaderboard-list").append("<ul>name: " + d.name + " score: " + d.score + "</ul>");
                 console.log(d);
