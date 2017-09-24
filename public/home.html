@@ -95,18 +95,12 @@
         };
 
         $(document).ready(function () {
-            home();
-            // $('#risk-input').submit(function () {
-            //     event.preventDefault();
-            //     $('#new-risk').html($('#risk').val());
-            //     console.log("risk-input submitted with " + $('#risk').val());
-            //     $("#collapse1").collapse('hide');
-            //     return false;
-            // });
+            $("panel-group").attr("id", "home");
+            $("panel-group").html('<div id="panel1" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="newRisk()">New Risk</a></div></div><div id="panel2" class="panel"><div class="panel-heading bp third white"><a class="third-text" onClick="todaysRisks()">Today\'s Risks</a></div></div><div id="panel3" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="dashboard()">Dashboard</a></div></div>');
         });
 
         function home() {
-            $("panel-group").empty();
+            // $("panel-group").empty();
             $("panel-group").attr("id", "home");
             $("panel-group").html('<div id="panel1" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="newRisk()">New Risk</a></div></div><div id="panel2" class="panel"><div class="panel-heading bp third white"><a class="third-text" onClick="todaysRisks()">Today\'s Risks</a></div></div><div id="panel3" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="dashboard()">Dashboard</a></div></div>');
         }
@@ -142,17 +136,17 @@
         }
 
         //to get all sites, call getInfo('/sites');
-        var riskList = {};
-        $.get('http://www.moosen.im/messages/risks', function (data) {
+        // var riskList = {};
+        // $.get('http://www.moosen.im/messages/risks', function (data) {
 
-            data.forEach(function () { riskList.push(data); });
-        }, "json");
-        //update leaderboard
-        var leaderboard = {};
-        $.get('http://www.moosen.im/messages/leaderboard', function (data) {
+        //     data.forEach(function () { riskList.push(data); });
+        // }, "json");
+        // //update leaderboard
+        // var leaderboard = {};
+        // $.get('http://www.moosen.im/messages/leaderboard', function (data) {
 
-            data.forEach(function () { leaderboard.push(data); });
-        }, "json");
+        //     data.forEach(function () { leaderboard.push(data); });
+        // }, "json");
 
         function showLeaderboard(lb) {
 
