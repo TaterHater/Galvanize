@@ -7,7 +7,7 @@
     <title></title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
 
@@ -28,9 +28,9 @@
             text-align: center;
         }
 
-            .sixth a {
-                font-size: 2.5em;
-            }
+        .sixth a {
+            font-size: 2.5em;
+        }
 
         .two-third {
             height: 66.7vh;
@@ -75,9 +75,9 @@
             background-image: none;
         }
 
-            .bp a {
-                text-decoration: none;
-            }
+        .bp a {
+            text-decoration: none;
+        }
     </style>
     <script>
         var risk;
@@ -95,58 +95,54 @@
         };
 
         $(document).ready(function () {
-            $("#test").attr("id", "home");
-            $("#home").html('<div id="panel1" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="newRisk()">New Risk</a></div></div><div id="panel2" class="panel"><div class="panel-heading bp third white"><a class="third-text" onClick="todaysRisks()">Today\'s Risks</a></div></div><div id="panel3" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="dashboard()">Dashboard</a></div></div>');
+            home();
         });
 
         function home() {
-            // $("panel-group").empty();
-            $("panel-group").attr("id", "home");
-            $("panel-group").html('<div id="panel1" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="newRisk()">New Risk</a></div></div><div id="panel2" class="panel"><div class="panel-heading bp third white"><a class="third-text" onClick="todaysRisks()">Today\'s Risks</a></div></div><div id="panel3" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="dashboard()">Dashboard</a></div></div>');
+            $("#main").empty();
+            $("#main").attr("back", "home");
+            $("#main").html('<div id="panel1" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="newRisk()">New Risk</a></div></div><div id="panel2" class="panel"><div class="panel-heading bp third white"><a class="third-text" onClick="todaysRisks()">Today\'s Risks</a></div></div><div id="panel3" class="panel"><div class="panel-heading bp third blue"><a class="third-text" onClick="dashboard()">Dashboard</a></div></div>');
         }
 
         function back() {
             $("main").empty();
-            console.log($("panel-group").attr("id"));
-            var fn = window[backRelay[$("panel-group").attr("id")]];
+            console.log($("#main").attr("back"));
+            var fn = window[backRelay[$("#main").attr("back")]];
             if (typeof fn === 'function') {
                 fn();
             }
         }
 
         function newRisk() {
-            $("panel-group").empty();
-            $("panel-group").attr("id", "newRisk");
-            $("panel-group").add("div").addClass("panel").attr("id", "panel1");
-            $("#panel1").html('<div id="new-risk-panel" class="panel-heading bp third blue"><a class="third-text" onClick="riskName()">Risk name</a></div>');
+            $("#main").empty();
+            $("#main").attr("back", "newRisk");
+            $("#main").html('<div id="panel1" class="panel"><div id="new-risk-panel" class="panel-heading bp third blue"><a class="third-text" onClick="riskName()">Risk name</a></div></div>');
         }
 
         function todaysRisks() {
-            $("panel-group").empty();
-            $("panel-group").attr("id", "newRisk");
-            $("panel-group").add("div").addClass("panel").attr("id", "panel1");
-            $("#panel1").html('<div id="new-risk-panel" class="panel-heading bp third blue"><a class="third-text" onClick="riskName()">These are the risks</a></div>');
+            $("#main").empty();
+            $("#main").attr("back", "todaysRisks");
+            $("#main").html('<div id="new-risk-panel" class="panel-heading bp third blue"><a class="third-text" onClick="todaysRisks()">These are the risks</a></div>');
         }
 
         function dashboard() {
-            $("panel-group").empty();
-            $("panel-group").attr("id", "newRisk");
-            $("panel-group").add("div").addClass("panel").attr("id", "panel1");
-            $("#panel1").html('<div id="new-risk-panel" class="panel-heading bp third blue"><a class="third-text" onClick="riskName()">Dashboard shit</a></div>');
+            $("#main").empty();
+            $("#main").attr("back", "dashboard");
+            $("#main").html('<div id="new-risk-panel" class="panel-heading bp third blue"><a class="third-text" onClick="dashboard()">Dashboard shit</a></div>');
         }
 
         //to get all sites, call getInfo('/sites');
-         var riskList = [];
-         $.get('http://moosen.im/messages/risks', function (data) {
+        var riskList = [];
+        $.get('http://moosen.im/messages/risks', function (data) {
 
-             data.forEach(function () { riskList.push(data); });
-         }, "json");
+            data.forEach(function () { riskList.push(data); });
+        }, "json");
         // //update leaderboard
         // var leaderboard = {};
-         $.get('http://moosen.im/messages/leaderboard', function (data) {
+        $.get('http://moosen.im/messages/leaderboard', function (data) {
 
-        //     data.forEach(function () { leaderboard.push(data); });
-         }, "json");
+            //     data.forEach(function () { leaderboard.push(data); });
+        }, "json");
 
         function showLeaderboard(lb) {
 
@@ -154,16 +150,12 @@
             lb.score;
             //append lb to a list defined with jquery for when we have that. 
         }
-
-
-
-
     </script>
 </head>
 
 <body>
     <button onclick="back()">Back</button>
-    <div class="panel-group main" id="test">
+    <div class="panel-group main" id="main">
     </div>
 </body>
 
