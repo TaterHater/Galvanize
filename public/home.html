@@ -158,7 +158,6 @@
         }
 
         function todaysRisks() {
-            showRisks(riskList);
             $("#main").empty();
             $("#main").attr("back", "todaysRisks");
             $("#main").html(
@@ -166,16 +165,15 @@
                     '<a class="third-text" onClick="todaysRisks()">These are the risks</a>' +
                 '</div>' +
                 '<div id="risk-main" class="panel-heading bp third white">' +
-                    '<h4>All Risks</h4>' +
+                    '<h3>All Risks</h3>' +
                     '<ul id="risk-list">' +
                     '</ul>' +
                 '</div > '
             );
+            showRisks(riskList);
         }
 
         function dashboard() {
-            showLeaderboard(leaderboard);
-
             $("#main").empty();
             $("#main").attr("back", "dashboard");
             $("#main").html(
@@ -220,7 +218,7 @@
         function showLeaderboard(lb) {
 
             lb.forEach(function (d) {
-                $("#leaderboard-list").append("<li><h2> name: " + d.name + " score: " + d.score + "</h2></li > ");
+                $("#leaderboard-list").append("<li><h2> name: " + d.name + " score: " + d.score + "</h2></li> ");
                 // console.log("name: " + d.name + " score: " + d.score);
                 // console.log(d);
             });
@@ -228,7 +226,7 @@
         function showRisks(lb) {
 
             lb.forEach(function (d) {
-                $("#risk-list").append("<li><h2> name: " + d.name + " risk level  " + d.severity + "</h2></li > ");
+                $("#risk-list").append("<li><h2> name: " + d.name + " risk level: " + d.severity + "</h2></li> ");
                 // console.log("name: " + d.name + " severity: " + d.severity);
                 // console.log(d);
             });
