@@ -143,7 +143,9 @@
 
             data.forEach(function () { leaderboard.push(data); });
         }, "json");
-
+        leaderboard.forEach(function (d) {
+            console.log("name: " + d.name + " score: " + score);
+        });
         function showLeaderboard(lb) {
 
             lb.name;
