@@ -39,7 +39,15 @@ function addUser(name, email, isAdmin) {
     con.query("insert into users (name,email,is_admin) values (?,?,0,?) ", [name, email, isAdmin]);
 }
 
+function leaderboard() {
+    con.query("SELECT * FROM ( SELECT * FROM users ORDER BY score DESC LIMIT 10) sub ORDER BY  score ASC", function (row, error) {
 
+
+
+    });
+
+
+}
 
 function getInfo(path,callback) {
 
