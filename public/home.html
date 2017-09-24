@@ -158,18 +158,23 @@
         }
 
         function todaysRisks() {
+            showRisks(riskList);
             $("#main").empty();
             $("#main").attr("back", "todaysRisks");
             $("#main").html(
                 '<div class="panel-heading bp third blue">' +
                     '<a class="third-text" onClick="todaysRisks()">These are the risks</a>' +
-                '</div>'
+                '</div>' +
+                '<div dashboard-main class="panel-heading bp third white">' +
+                '<h3>All Risks</h3> <ul id="risk-list">' +
+                '</ul>' +
+                '</div > '
             );
         }
 
         function dashboard() {
             showLeaderboard(leaderboard);
-            showRisks(riskList);
+           
             $("#main").empty();
             $("#main").attr("back", "dashboard");
             $("#main").html(
@@ -208,8 +213,7 @@
            // data.forEach(function () { leaderboard.push(data); });
             console.log(data+" data");
         }, "json");
-
-      
+        
         function showLeaderboard(lb) {
 
             lb.forEach(function (d) {
@@ -221,8 +225,8 @@
             function showRisks(lb) {
 
                 lb.forEach(function (d) {
-                  //  $("#risk-list").append("<li><h2> name: " + d.name + " score: " + d.score + "</h2></li > ");
-                     console.log("name: " + d.name + " score: " + d.severity);
+                    $("#risk-list").append("<li><h2> name: " + d.name + " score: " + d.score + "</h2></li > ");
+                    // console.log("name: " + d.name + " score: " + d.severity);
                     // console.log(d);
                 });
            
