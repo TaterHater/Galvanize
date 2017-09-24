@@ -7,7 +7,7 @@
     <title></title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
 
@@ -28,9 +28,9 @@
             text-align: center;
         }
 
-        .sixth a {
-            font-size: 2.5em;
-        }
+            .sixth a {
+                font-size: 2.5em;
+            }
 
         .two-third {
             height: 66.7vh;
@@ -75,9 +75,9 @@
             background-image: none;
         }
 
-        .bp a {
-            text-decoration: none;
-        }
+            .bp a {
+                text-decoration: none;
+            }
     </style>
     <script>
         var risk;
@@ -95,6 +95,7 @@
         };
 
         $(document).ready(function () {
+<<<<<<< HEAD
             home();
             // $('#risk-input').submit(function () {
             //     event.preventDefault();
@@ -146,10 +147,41 @@
             $("#panel1").html('<div id="new-risk-panel" class="panel-heading bp third blue"><a class="third-text" onClick="riskName()">Dashboard shit</a></div>');
         }
 
+=======
+            $("panel-group").add("div").addClass("panel").attr("id", "panel1");
+            $("#panel1").html('<div class="panel-heading bp third blue"><a class="third-text" id="new-risk" data-toggle="collapse" href="#collapse1">New Risk</a></div><div id="collapse1" class="panel-collapse collapse"><div class="panel bp third grey"><form id="risk-input"><a class="sixth-text">What\'s the Risk?</a><br><input type="text" autocomplete="off" id="risk" placeholder="Type the risk here"><input type="submit" value="Submit"></form></div></div>');
+            $('#risk-input').submit(function () {
+                event.preventDefault();
+                $('#new-risk').html($('#risk').val());
+                console.log("risk-input submitted with " + $('#risk').val());
+                $("#collapse1").collapse('hide');
+                return false;
+            });
+        });
+        var riskList;
+>>>>>>> 77f4297fbfedc547a44809df0a9622ae3396b540
         //to get all sites, call getInfo('/sites');
         $.get('http://www.moosen.im/messages/risks', function (data) {
-            alert("Data Loaded: " + data[0].id);
+
+            data.forEach(function () { riskList.push(data); });
         }, "json");
+        //update leaderboard
+        var leaderboard;
+        $.get('http://www.moosen.im/messages/leaderboard', function (data) {
+
+            data.forEach(function () { leaderboard.push(data); });
+        }, "json");
+
+        function showLeaderboard(lb) {
+
+            lb.name;
+            lb.score;
+            //append lb to a list defined with jquery for when we have that. 
+        }
+
+
+
+
     </script>
 </head>
 
