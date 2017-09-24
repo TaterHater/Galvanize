@@ -175,7 +175,9 @@
                     '<a class="third-text" onClick="dashboard()">Dashboard shit</a>' +
                 '</div>' +
                 '<div dashboard-main class="panel-heading bp third white">' +
-                'leeeeeeeeder boaarddds </div>'
+                    'leeeeeeeeder boaarddds <li id="leaderboard-list">' +
+                    ''+
+                '</div > '
             );
         }
 
@@ -208,6 +210,7 @@
         });
         function showLeaderboard(lb) {
             leaderboard.forEach(function (d) {
+                $("#leaderboard-list").append("<ul>name: " + d.name + " score: " + d.score + "</ul>");
                 console.log("name: " + d.name + " score: " + d.score);
             });
            
