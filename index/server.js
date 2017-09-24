@@ -41,7 +41,6 @@ function addUser(name, email, isAdmin) {
 
 function leaderboard(board) {
     con.query("SELECT * FROM ( SELECT * FROM users ORDER BY score DESC LIMIT 10) sub ORDER BY  score ASC", function (row, error) {
-
         row.forEach(function (data) {
             board.push(data);
         });
@@ -50,7 +49,7 @@ function leaderboard(board) {
 
 
 }
-
+//pretty much depricated, would only be useful if we make a rest call from the server, not sure why we would...
 function getInfo(path,callback) {
 
     return http.get({
@@ -63,11 +62,9 @@ function getInfo(path,callback) {
             body += d;
         });
         response.on('end', function () {
-
             // Data reception is done, do whatever with it!
             var parsed = JSON.parse(body);
-            console.log(body);
-                
+            console.log(body);               
         });
     });
 

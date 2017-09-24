@@ -42,6 +42,17 @@ router.get('/getform/:site?', function (req, res, next) {
         });
     }
 });
+outer.get('/getform/:uid?', function (req, res, next) {
+    if (req.params.site) {
+        Mess.GetformBySite(req.params.site, function (err, rows) {
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(rows);
+            }
+        });
+    }
+});
 router.get('/leaderboard', function (req, res, next) {
     Mess.getLeaderboard(function (err, rows) {
         if (err) {
